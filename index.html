@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Be My Valentine</title>
+
+<style>
+:root {
+  --pink: #ff4d6d;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffd6e0, #ff9a9e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: white;
+  width: 90%;
+  max-width: 360px;
+  padding: 24px 18px 30px;
+  border-radius: 26px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,.25);
+}
+
+h1 {
+  color: var(--pink);
+  font-size: 26px;
+}
+
+img {
+  width: 100%;
+  max-width: 220px;
+  border-radius: 18px;
+  margin: 12px auto 16px;
+  display: block;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 14px 22px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#yesBtn {
+  background: var(--pink);
+  color: white;
+}
+
+#noBtn {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.message {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--pink);
+  min-height: 20px;
+}
+
+.gif-box {
+  width: 100%;
+  height: 160px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 14px;
+}
+
+.gif-box img {
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 16px;
+  transition: opacity 0.3s ease;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>Hi Bebi Kyky</h1>
+  <p>Will you be my Valentine?</p>
+
+<div class="gif-box">
+  <img id="gif" src="mid.gif" alt="reaction gif">
+</div>
+
+
+  <div class="buttons">
+    <button id="yesBtn">YES </button>
+    <button id="noBtn">No </button>
+  </div>
+
+  <div class="message" id="message"></div>
+</div>
+
+<script>
+const gif = document.getElementById("gif");
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const message = document.getElementById("message");
+
+let noCount = 0;
+
+const noTexts = [
+  "bakit noooooo?",
+  "sige na pleaseeee",
+  "tara na ohhh",
+  "PLEASE 😭",
+  "Okay last chance 🥺"
+];
+
+noBtn.addEventListener("click", () => {
+  gif.src = "no.gif";
+  message.textContent = noTexts[noCount % noTexts.length];
+  noCount++;
+
+  // move NO away
+  noBtn.style.transform = `translateX(${noCount * 20}px) rotate(${noCount * 8}deg)`;
+
+  if (noCount >= 5) {
+    noBtn.style.display = "none";
+    message.textContent = "Only YES is left HAHAHHAHAH";
+  }
+});
+
+yesBtn.addEventListener("click", () => {
+  gif.src = "yes.gif";
+  message.textContent = "YAYYYYY 💕";
+
+  setTimeout(() => {
+    window.location.href = "letter.html";
+  }, 900);
+});
+</script>
+
+</body>
+</html>

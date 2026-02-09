@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Valentine</title>
+
+<style>
+:root {
+  --pink: #ff4d6d;
+  --pink-soft: #ffb3c1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px;
+  font-family: 'Georgia', serif;
+}
+
+/* LETTER CARD */
+.letter {
+  background: #fff;
+  max-width: 420px;
+  width: 100%;
+  padding: 28px 22px 32px;
+  border-radius: 22px;
+  box-shadow: 0 25px 50px rgba(0,0,0,.25);
+  animation: fadeUp 0.9s ease;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  text-align: center;
+  color: var(--pink);
+  margin-bottom: 14px;
+}
+
+/* PHOTOS */
+.photos {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.photos img {
+  width: 33.33%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 10px 18px rgba(0,0,0,.25);
+  animation: float 4s ease-in-out infinite;
+}
+
+.photos img:nth-child(2) {
+  animation-delay: 1.5s;
+}
+.photos img:nth-child(3) {
+  animation-delay: 3s;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #444;
+  margin-bottom: 14px;
+}
+
+.signature {
+  margin-top: 18px;
+  font-weight: bold;
+  color: var(--pink);
+}
+
+.hearts {
+  text-align: center;
+  font-size: 28px;
+  margin-top: 10px;
+  animation: hearts 1.4s ease-in-out infinite alternate;
+}
+
+@keyframes hearts {
+  from { transform: scale(1); }
+  to   { transform: scale(1.15); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="letter">
+  <h1> My Valentine</h1>
+
+  <!-- PHOTOS -->
+  <div class="photos">
+    <img src="photo1.jpg" alt="Us 1">
+    <img src="photo2.jpg" alt="Us 2">
+    <img src="photo3.jpg" alt="Us 3">
+  </div>
+
+  <!-- LETTER -->
+  <p>
+    Hi bebi,
+    <br><br>
+Just so you know, you are one of the greatest blessings God has ever given me. Maraming, maraming salamat sa lahat ng walang sawang efforts at sa pagmamahal mo para sa akin, bebiii. Thank you for your patience, for choosing to understand, and for always choosing to fix things with me instead of letting them grow bigger. I’m so grateful for you, always.
+    <br><br>
+    You will always be my bebi, i love youuuu sagad!!!
+  </p>
+
+  <p class="signature">
+    Always yours,<br>
+    gabgab pogi
+  </p>
+
+
+
+</body>
+</html>
