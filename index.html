@@ -16,10 +16,6 @@
   font-family: 'Fredoka', sans-serif;
 }
 
-}
-
-}
-
 body {
   margin: 0;
   min-height: 100vh;
@@ -42,14 +38,26 @@ body {
 h1 {
   color: var(--pink);
   font-size: 26px;
+  margin-bottom: 6px;
 }
 
-img {
+p {
+  margin-top: 0;
+}
+
+.gif-box {
   width: 100%;
-  max-width: 220px;
-  border-radius: 18px;
-  margin: 12px auto 16px;
-  display: block;
+  height: 160px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 12px 0 16px;
+}
+
+.gif-box img {
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 16px;
 }
 
 .buttons {
@@ -82,23 +90,6 @@ button {
   color: var(--pink);
   min-height: 20px;
 }
-
-.gif-box {
-  width: 100%;
-  height: 160px; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 0 14px;
-}
-
-.gif-box img {
-  max-height: 100%;
-  max-width: 100%;
-  border-radius: 16px;
-  transition: opacity 0.3s ease;
-}
-
 </style>
 </head>
 
@@ -108,14 +99,13 @@ button {
   <h1>Hi Bebi Kyky</h1>
   <p>Will you be my Valentine?</p>
 
-<div class="gif-box">
-  <img id="gif" src="mid.gif" alt="reaction gif">
-</div>
-
+  <div class="gif-box">
+    <img id="gif" src="mid.gif" alt="reaction gif">
+  </div>
 
   <div class="buttons">
-    <button id="yesBtn">YES </button>
-    <button id="noBtn">No </button>
+    <button id="yesBtn">YES</button>
+    <button id="noBtn">No</button>
   </div>
 
   <div class="message" id="message"></div>
@@ -142,12 +132,11 @@ noBtn.addEventListener("click", () => {
   message.textContent = noTexts[noCount % noTexts.length];
   noCount++;
 
-  // move NO away
   noBtn.style.transform = `translateX(${noCount * 20}px) rotate(${noCount * 8}deg)`;
 
   if (noCount >= 5) {
     noBtn.style.display = "none";
-    message.textContent = "Only YES is left HAHAHHAHAH";
+    message.textContent = "Only YES is left HAHAHA 💖";
   }
 });
 
@@ -163,5 +152,3 @@ yesBtn.addEventListener("click", () => {
 
 </body>
 </html>
-
-
